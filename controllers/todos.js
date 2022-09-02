@@ -6,6 +6,7 @@ module.exports = {
     try {
       const todoItems = await Todo.find({ userId: req.user.id });
       const bookRatings = await Todo.find({ bookRating: req.body.bookRating });
+      const authors = await Todo.find({ author: req.body.author });
       const itemsLeft = await Todo.countDocuments({
         userId: req.user.id,
         completed: false,
@@ -15,6 +16,7 @@ module.exports = {
         left: itemsLeft,
         user: req.user,
         bookRating: bookRatings,
+        author: authors,
       });
     } catch (err) {
       console.log(err);
@@ -27,6 +29,7 @@ module.exports = {
         completed: false,
         userId: req.user.id,
         bookRating: req.body.bookRating,
+        author: req.body.author,
       });
       console.log("Todo has been added!");
       res.redirect("/todos");
