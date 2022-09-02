@@ -8,20 +8,27 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <h1>Todos</h1>
+    <h1>Book List</h1>
     <ul>
     <% todos.forEach( el => { %>
             <li class='todoItem' data-id='<%=el._id%>'>
                 <span class='<%= el.completed === true ? 'completed' : 'not'%>'><%= el.todo %></span>
+                <span><%= el.bookRating %></span>
                 <span class='del'> Delete </span>
             </li>
     <% }) %>    
     </ul>
 
-    <h2><%= user.userName %> has <%= left %> things left to do.</h2>
+    <h2><%= user.userName %> has <%= left %> books to finish.</h2>
 
     <form action="/todos/createTodo" method='POST'>
-        <input type="text" placeholder="Enter Todo Item" name='todoItem'>
+        <label for="">Book Title: <input type="text" placeholder="Enter book title" name='todoItem'></label>
+
+        <label for="">Author: <input type="text" placeholder="Author's name" name='author'>
+        </label>
+
+        <label for="">Rating: <input type="number" placeholder="1" name='bookRating'>
+         </label>
         <input type="submit">
     </form>
 
