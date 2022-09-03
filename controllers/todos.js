@@ -10,13 +10,15 @@ module.exports = {
       const itemsLeft = await Todo.countDocuments({
         userId: req.user.id,
         completed: false,
-      });
+      })
+      const datesAdded = await Todo.find({ dateAdded: req.body.dateAdded })
       res.render("todos.ejs", {
         todos: todoItems,
         left: itemsLeft,
         user: req.user,
         bookRating: bookRatings,
-        author: authors,
+        dateAdded: datesAdded,
+        author: authors
       });
     } catch (err) {
       console.log(err);
@@ -29,7 +31,9 @@ module.exports = {
         completed: false,
         userId: req.user.id,
         bookRating: req.body.bookRating,
-        author: req.body.author,
+        dateAdded: new Date().toLocaleDateString(),
+        author: req.body.author
+
       });
       console.log("Todo has been added!");
       res.redirect("/todos");
