@@ -20,6 +20,10 @@ const TodoSchema = new mongoose.Schema({
   dateAdded: {
     type: String,
     required: true,
+  },
+  author: {
+    type: String,
+    required: true,
   }
 });
 
