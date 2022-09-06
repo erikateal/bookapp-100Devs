@@ -1,6 +1,6 @@
 # Introduction
 
-A Simple ToDo App is built using the MVC Architecture, we have also implemented "authorization" so folx can sign up, customize & personalize the app 
+Pagemaster is a simple booklist app built using the MVC Architecture with additional "authorization" functionality so folx can sign up, customize & personalize the app 
 
 ---
 
@@ -10,13 +10,13 @@ A Simple ToDo App is built using the MVC Architecture, we have also implemented 
 
 # Objectives
 
-- It's a beginner level app created to understand how MVC concept and logins are added
+- It's an app centered around our shared love of reading with the goal of incorporating logins and building using MVC architecture.
 
 ---
 
 # Who is this for? 
 
-- It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
+- It's for book enthusiants who are looking for a simple way to keep track of the books they have read and/or want to read.
 
 ---
 
